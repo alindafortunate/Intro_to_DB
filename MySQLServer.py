@@ -28,6 +28,7 @@ try:
     mycursor = mydb.cursor()
     sql = "CREATE DATABASE IF NOT EXISTS alx_book_store"
     mycursor.execute(sql)
+    print("Database 'alx_book_store' created successfully!")
 
 except mysql.connector.Error as e:
     print(e)
