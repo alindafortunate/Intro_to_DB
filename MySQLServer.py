@@ -23,10 +23,11 @@ try:
         user="alindafortunate",
         password=config("password"),
         database="alx_book_store",
+        auth_plugin="mysql_native_password",
     )
     mycursor = mydb.cursor()
     sql = "CREATE DATABASE IF NOT EXISTS alx_book_store"
     mycursor.execute(sql)
 
-except mysql.connector.errors.NotSupportedError as e:
+except mysql.connector.Error as e:
     print(e)
